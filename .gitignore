@@ -1,0 +1,29 @@
+# Rust
+/target/
+**/*.rs.bk
+
+# Local runtime files of the app (settings, audit trail, temporary files)
+msQuant-default/
+lcms_audit.log
+lcms_settings.txt
+results*.csv
+converted_mzml/
+*.quant
+
+# Third-party binaries and large data (do not redistribute / too large for GitHub)
+tools/*
+!tools/ThermoRawFileParser/
+tools/ThermoRawFileParser/*
+!tools/ThermoRawFileParser/README.txt
+test-data/*.raw
+test-data/*.mzML
+test-data/*.mzml
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+!test-data/README.txt
