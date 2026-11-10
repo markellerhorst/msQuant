@@ -14,3 +14,6 @@ add/fix the following:
 - add to readme where to find an analyte target example table and show an example table with an explanation for the requried columns and information
 - include ci/cd test suit results live in readme if possible
 - no general audit log file but one per .quant file or if no file is saved then per session (one session = open program -> work -> close program)
+- make sure that cargo build --release does not include the thermorawfileparser
+- check the entire code for security issues and exploits and fix if any are found
+- change the github repo name to https://github.com/markellerhorst/msQuant and the ico name to ./img/msQuant-ico.ico
