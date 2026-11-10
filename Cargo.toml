@@ -1,10 +1,10 @@
 [package]
 name = "msquant"
 version = "0.1.0"
-edition = "2026"
+edition = "2021"
 description = "Targeted LC-MS/MS quantification from Thermo .raw and mzML files"
-repository = "https://github.com/markellerhorst/lcms-quant"
-homepage = "https://github.com/markellerhorst/lcms-quant"
+repository = "https://github.com/markellerhorst/msQuant"
+homepage = "https://github.com/markellerhorst/msQuant"
 license = "MIT"
 readme = "README.md"
 build = "build.rs"
