@@ -17,3 +17,8 @@ add/fix the following:
 - make sure that cargo build --release does not include the thermorawfileparser
 - check the entire code for security issues and exploits and fix if any are found
 - change the github repo name to https://github.com/markellerhorst/msQuant and the ico name to ./img/msQuant-ico.ico
+
+gui design:
+- replace process main tab with the calibration file selection and target table window and dont add a process menu button
+- for the "view" tab
+- f

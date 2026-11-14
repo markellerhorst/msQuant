@@ -90,12 +90,15 @@ choose another one under *Edit → Preferences → Folders*. Every file dialog s
 | Missing precursor | – | target gets no peak (ND); add `p:<m/z>` to the table |
 
 **Peak detection and integration** (identical in both modes)
-1. The apex is the highest point of the quantifier trace, searched within the expected RT ± *RT window* (default 0.30 min), or in the whole run when the RT is `n/a`.
-2. Automatic boundaries walk away from the apex until the signal falls below 5 % of the apex height or rises again on two consecutive points.
-3. All traces of a target in a file share the same boundaries. You can move them by grabbing the lines or typing values; manual boundaries are logged with a reason and kept until reset.
-4. The area is the trapezoid sum between the boundaries (boundary values interpolated), in intensity·seconds. With *Linear baseline subtraction* a straight line between the signal at the two
-   boundaries is subtracted. Because the automatic boundaries end at 5 % of the apex, this also removes that 5 % pedestal (areas ≈ 10 % lower than the full peak);
-   standards and samples are treated identically, so concentrations are not affected, but absolute areas are not comparable with other software unless the boundaries are widened.
+Peak Detection and Integration
+
+msQuant currently uses apex-based peak detection: the highest intensity within an optional retention-time window defines the peak apex. Boundaries are determined by searching left and right until the signal falls below 5% of apex intensity or two consecutive rising points indicate a boundary. Peak area is calculated using trapezoidal integration:
+
+$$
+A = \sum_{i=1}^{n-1} \frac{I_i + I_{i+1}}{2}(t_{i+1}-t_i)
+$$
+
+Linear baseline correction is supported. Users can manually adjust integration boundaries through the GUI. Advantages: Simple, fast, and reproducible. Limitations: Fixed thresholds can be unreliable for noisy baselines, tailing peaks, and overlapping peaks.
 
 **Calibration** (mode *Standard curve*; one calibration per target and per signal)
 - Standards are files of type *Standard* that carry a concentration > 0 for that target. A file can be a standard for several targets with different concentrations; replicates are files with the same concentration.

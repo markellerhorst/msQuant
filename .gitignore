@@ -4,10 +4,7 @@
 
 # Local runtime files of the app (settings, audit trail, temporary files)
 msQuant-default/
-lcms_audit.log
-lcms_settings.txt
 results*.csv
-converted_mzml/
 *.quant
 
 # Third-party binaries and large data (do not redistribute / too large for GitHub)
@@ -18,6 +15,7 @@ tools/ThermoRawFileParser/*
 test-data/*.raw
 test-data/*.mzML
 test-data/*.mzml
+test-data/data_source.txt
 
 # Editors / OS
 .vscode/
@@ -27,3 +25,8 @@ test-data/*.mzml
 Thumbs.db
 desktop.ini
 !test-data/README.txt
+
+# Todo
+img/design_idea_gui.webp
+todo.md
+roadmap.md
